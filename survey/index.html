@@ -7,7 +7,7 @@
     <meta name="description" content="دراسة بحثية حول آراء المواطنين السعوديين بشأن الاستثمارات السعودية والتنمية الاقتصادية — جامعة أكسفورد">
     <meta name="robots" content="noindex, nofollow">
 
-    <!-- Google Fonts: Noto Naskh Arabic (Arabic body) + Noto Sans (Latin fallback) -->
+    <!-- Google Fonts: Noto Naskh Arabic + Noto Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -15,42 +15,26 @@
     <style>
         /* =============================================
            COLOR SYSTEM — 60 / 30 / 10
-           60% White    (#FFFFFF) — page canvas
-           30% Grey     (#393939 headings, #727272 body,
-                         #F7F7F7 subtle bg, #E5E5E5 borders)
-           10% Blue     (#267CB9) — links, accents, CTA
+           60% White (#FFFFFF)
+           30% Grey  (#393939, #727272, #F7F7F7, #E5E5E5)
+           10% Blue  (#267CB9)
            ============================================= */
         :root {
-            /* 60% — dominant */
             --white: #FFFFFF;
-
-            /* 30% — secondary greys */
             --text-heading: #393939;
             --text-body: #727272;
             --text-muted: #999999;
             --bg-subtle: #F7F7F7;
             --border: #E5E5E5;
             --border-light: #EFEFEF;
-
-            /* 10% — accent */
             --accent: #267CB9;
             --accent-hover: #1B5E8A;
             --accent-light: #EBF3FA;
         }
 
-        /* =============================================
-           RESET & BASE
-           ============================================= */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html {
-            font-size: 16px;
-            -webkit-text-size-adjust: 100%;
-        }
+        html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 
         body {
             font-family: 'Noto Naskh Arabic', 'Noto Sans', Tahoma, Arial, sans-serif;
@@ -60,118 +44,90 @@
             direction: rtl;
             text-align: right;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* =============================================
-           TOP ACCENT BAR — 10% colour signal
-           ============================================= */
-        .top-bar {
-            height: 3px;
-            background-color: var(--accent);
-            width: 100%;
-        }
+        .top-bar { height: 3px; background-color: var(--accent); }
 
-        /* =============================================
-           LAYOUT
-           ============================================= */
         .page-wrapper {
             max-width: 660px;
             margin: 0 auto;
             padding: 44px 28px 72px;
+            animation: fadeUp 0.45s ease-out both;
+        }
+        @media (max-width: 480px) { .page-wrapper { padding: 28px 20px 56px; } }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 480px) {
-            .page-wrapper {
-                padding: 28px 20px 56px;
-            }
-        }
-
-        /* =============================================
-           HEADER / AFFILIATION
-           ============================================= */
+        /* --- Header --- */
         .affiliation {
             margin-bottom: 36px;
             padding-bottom: 18px;
             border-bottom: 1px solid var(--border-light);
         }
-
         .affiliation-line {
             font-size: 0.85rem;
             color: var(--text-muted);
             line-height: 1.6;
-            letter-spacing: 0.01em;
         }
-
         .affiliation-line a {
             color: var(--accent);
             text-decoration: none;
             font-weight: 600;
         }
+        .affiliation-line a:hover { text-decoration: underline; }
 
-        .affiliation-line a:hover {
-            text-decoration: underline;
-        }
-
-        /* =============================================
-           STUDY TITLE
-           ============================================= */
+        /* --- Title --- */
         .study-title {
             font-size: 1.45rem;
             font-weight: 700;
             color: var(--text-heading);
             line-height: 1.55;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
+        @media (max-width: 480px) { .study-title { font-size: 1.25rem; } }
 
-        @media (max-width: 480px) {
-            .study-title {
-                font-size: 1.25rem;
-                margin-bottom: 24px;
-            }
-        }
-
-        /* =============================================
-           BODY TEXT
-           ============================================= */
+        /* --- Body text --- */
         .greeting {
             font-size: 1.05rem;
             color: var(--text-heading);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
-
         .body-text {
             font-size: 1rem;
             line-height: 1.8;
             color: var(--text-body);
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
+        .body-text strong { color: var(--text-heading); font-weight: 600; }
 
-        .body-text strong {
-            color: var(--text-heading);
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* --- Signpost --- */
+        .signpost {
+            font-size: 0.84rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+            margin: 6px 0 22px;
+            padding-right: 12px;
+            border-right: 2px solid var(--border);
+        }
+        .signpost a {
+            color: var(--accent);
             font-weight: 600;
         }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* =============================================
-           KEY DETAILS — SUBTLE ROW
-           ============================================= */
+        /* --- Detail chips --- */
         .details-row {
             display: flex;
-            gap: 16px;
+            gap: 14px;
             flex-wrap: wrap;
-            margin: 24px 0;
+            margin: 0 0 22px;
         }
-
         .detail-chip {
             display: inline-flex;
             align-items: center;
@@ -184,47 +140,32 @@
             color: var(--text-heading);
             white-space: nowrap;
         }
+        .detail-chip .chip-icon { font-size: 0.9rem; opacity: 0.55; }
 
-        .detail-chip .chip-icon {
-            font-size: 0.9rem;
-            opacity: 0.55;
-        }
-
-        /* =============================================
-           PRIZE DRAW BLOCK
-           ============================================= */
+        /* --- Prize draw --- */
         .prize-block {
             background-color: var(--accent-light);
             border: 1px solid #D4E5F3;
             border-radius: 8px;
-            padding: 18px 22px;
-            margin: 28px 0 8px;
+            padding: 16px 20px;
+            margin: 0 0 8px;
         }
-
         .prize-label {
             display: inline-block;
             font-size: 0.8rem;
             font-weight: 700;
             color: var(--accent);
-            letter-spacing: 0.04em;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-
         .prize-text {
-            font-size: 0.93rem;
-            line-height: 1.75;
+            font-size: 0.91rem;
+            line-height: 1.7;
             color: var(--text-body);
             margin: 0;
         }
 
-        /* =============================================
-           CALL TO ACTION
-           ============================================= */
-        .cta-section {
-            text-align: center;
-            margin: 36px 0 32px;
-        }
-
+        /* --- CTA --- */
+        .cta-section { text-align: center; margin: 32px 0 28px; }
         .cta-button {
             display: inline-block;
             background-color: var(--accent);
@@ -242,37 +183,24 @@
             transition: background-color 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 1px 3px rgba(38, 124, 185, 0.15);
         }
-
         .cta-button:hover {
             background-color: var(--accent-hover);
             text-decoration: none;
             color: var(--white);
             box-shadow: 0 2px 8px rgba(38, 124, 185, 0.25);
         }
-
-        .cta-button:active {
-            background-color: #154D72;
-            box-shadow: 0 1px 2px rgba(38, 124, 185, 0.15);
-        }
-
+        .cta-button:active { background-color: #154D72; }
         @media (max-width: 480px) {
-            .cta-button {
-                display: block;
-                width: 100%;
-                padding: 16px 24px;
-            }
+            .cta-button { display: block; width: 100%; padding: 16px 24px; }
         }
 
-        /* =============================================
-           ACCORDION / EXPANDABLE SECTION
-           ============================================= */
+        /* --- Accordion --- */
         .accordion {
-            margin: 32px 0 12px;
+            margin: 0 0 12px;
             border: 1px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
         }
-
         .accordion-trigger {
             display: flex;
             align-items: center;
@@ -290,17 +218,12 @@
             direction: rtl;
             transition: background-color 0.15s ease;
         }
-
-        .accordion-trigger:hover {
-            background: #F0F0F0;
-        }
-
+        .accordion-trigger:hover { background: #F0F0F0; }
         .accordion-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 24px;
-            height: 24px;
+            width: 24px; height: 24px;
             border-radius: 50%;
             background: var(--white);
             border: 1px solid var(--border);
@@ -311,34 +234,23 @@
             margin-right: auto;
             margin-left: 0;
         }
-
-        .accordion-trigger:hover .accordion-icon {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
+        .accordion-trigger:hover .accordion-icon { border-color: var(--accent); color: var(--accent); }
         .accordion-trigger[aria-expanded="true"] .accordion-icon {
             transform: rotate(180deg);
             background: var(--accent-light);
             border-color: var(--accent);
             color: var(--accent);
         }
-
         .accordion-panel {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease;
         }
-
-        .accordion-panel[aria-hidden="false"] {
-            max-height: 4000px;
-        }
-
+        .accordion-panel[aria-hidden="false"] { max-height: 4000px; }
         .accordion-content {
             padding: 22px 24px 30px;
             border-top: 1px solid var(--border-light);
         }
-
         .pis-heading {
             font-size: 0.93rem;
             font-weight: 700;
@@ -346,30 +258,17 @@
             margin-top: 22px;
             margin-bottom: 6px;
         }
-
-        .pis-heading:first-child {
-            margin-top: 0;
-        }
-
+        .pis-heading:first-child { margin-top: 0; }
         .pis-text {
             font-size: 0.88rem;
             line-height: 1.75;
             color: var(--text-body);
             margin-bottom: 14px;
         }
+        .pis-text:last-child { margin-bottom: 0; }
+        .pis-text a { color: var(--accent); word-break: break-all; }
 
-        .pis-text:last-child {
-            margin-bottom: 0;
-        }
-
-        .pis-text a {
-            color: var(--accent);
-            word-break: break-all;
-        }
-
-        /* =============================================
-           FOOTER
-           ============================================= */
+        /* --- Footer --- */
         .page-footer {
             margin-top: 52px;
             padding-top: 18px;
@@ -377,38 +276,15 @@
             font-size: 0.78rem;
             color: var(--text-muted);
             text-align: center;
-            letter-spacing: 0.01em;
-        }
-
-        /* =============================================
-           SUBTLE ENTRANCE ANIMATION
-           ============================================= */
-        .page-wrapper {
-            animation: fadeUp 0.45s ease-out both;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
 <body>
 
-<!-- 10% accent: thin top bar -->
 <div class="top-bar" aria-hidden="true"></div>
 
 <div class="page-wrapper">
 
-    <!-- ============================================
-         HEADER: INSTITUTIONAL AFFILIATION
-         ============================================ -->
     <header class="affiliation">
         <p class="affiliation-line">
             دراسة بحثية تستضيفها
@@ -417,24 +293,24 @@
         </p>
     </header>
 
-    <!-- ============================================
-         STUDY TITLE
-         ============================================ -->
     <h1 class="study-title">آراء المواطنين السعوديين حول الاستثمارات السعودية والتنمية الاقتصادية</h1>
 
-    <!-- ============================================
-         STUDY DESCRIPTION
-         ============================================ -->
     <main>
         <p class="greeting">السلام عليكم،</p>
         <p class="body-text">
             ندعوكم للمشاركة في دراسة بحثية يُجريها
             <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a>،
-            باحث في جامعة أكسفورد، حول آراء المواطنين السعوديين بشأن الاستثمارات السعودية والتنمية الاقتصادية.
-            تهدف هذه الدراسة إلى فهم وجهات نظر المواطنين حيال مسارات التطور الاقتصادي في المملكة العربية السعودية.
+            باحث في جامعة أكسفورد، حول الاستثمارات السعودية والتنمية الاقتصادية.
         </p>
 
-        <!-- Key details: time + anonymity -->
+        <!-- Signpost: orient mobile users to page structure -->
+        <p class="signpost">
+            للمشاركة، اضغطوا على زر <a href="#survey-cta">«ابدأ الاستبيان»</a> أدناه.
+            التفاصيل الكاملة حول الخصوصية وحقوقكم متاحة في
+            <a href="#pis-trigger">«صحيفة معلومات المشارك»</a>
+            أسفل الصفحة.
+        </p>
+
         <div class="details-row">
             <span class="detail-chip">
                 <span class="chip-icon">◷</span>
@@ -446,28 +322,19 @@
             </span>
         </div>
 
-        <!-- ============================================
-             PRIZE DRAW
-             ============================================ -->
         <div class="prize-block">
             <span class="prize-label">السحب على الجائزة</span>
             <p class="prize-text">
-                عند الانتهاء من الاستبيان، ستتاح لكم الفرصة — إذا رغبتم — للدخول في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا سعوديًا لكل منها. الدخول في السحب اختياري بالكامل ومنفصل تمامًا عن الاستبيان. أي بيانات تواصل تقدمونها لغرض السحب تُحفظ في نظام منفصل تمامًا عن إجاباتكم، مما يجعل الربط بينهما غير ممكن.
+                عند إكمال الاستبيان، يمكنكم الدخول في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا سعوديًا. السحب اختياري بالكامل، وبيانات التواصل تُحفظ بشكل منفصل تمامًا عن إجاباتكم.
             </p>
         </div>
 
-        <!-- ============================================
-             CALL TO ACTION
-             ============================================ -->
         <div class="cta-section">
             <a id="survey-cta" class="cta-button" href="[QUALTRICS_SURVEY_URL]" role="button">
                 ابدأ الاستبيان
             </a>
         </div>
 
-        <!-- ============================================
-             EXPANDABLE PARTICIPANT INFORMATION SHEET
-             ============================================ -->
         <div class="accordion">
             <button class="accordion-trigger"
                     id="pis-trigger"
@@ -483,103 +350,83 @@
                  aria-hidden="true">
                 <div class="accordion-content">
 
-                    <!-- Why this research? -->
                     <p class="pis-heading">لماذا هذا البحث؟</p>
                     <p class="pis-text">
                         تهدف هذه الدراسة إلى فهم آراء المواطنين السعوديين حول الاستثمارات السعودية والتنمية الاقتصادية.
                     </p>
 
-                    <!-- What will I be asked to do? -->
                     <p class="pis-heading">ماذا سيُطلب مني؟</p>
                     <p class="pis-text">
-                        سيُطلب منكم إكمال استبيان إلكتروني يستغرق حوالي ٧ إلى ٩ دقائق، يتضمن قراءة نص قصير ومشاهدة صورة، ثم الإجابة على أسئلة حول آرائكم.
+                        إكمال استبيان إلكتروني يستغرق حوالي ٧ إلى ٩ دقائق، يتضمن قراءة نص قصير ومشاهدة صورة، ثم الإجابة على أسئلة حول آرائكم.
                     </p>
 
-                    <!-- Is participation mandatory? -->
                     <p class="pis-heading">هل المشاركة إلزامية؟</p>
                     <p class="pis-text">
-                        المشاركة اختيارية بالكامل. يمكنكم الانسحاب في أي وقت خلال الاستبيان دون إبداء أي سبب.
+                        المشاركة اختيارية بالكامل. يمكنكم الانسحاب في أي وقت دون إبداء أي سبب.
                     </p>
 
-                    <!-- What about privacy? -->
                     <p class="pis-heading">ماذا عن الخصوصية؟</p>
                     <p class="pis-text">
-                        تُجمع إجابات الاستبيان بشكل مجهول الهوية. عند إكمال الاستبيان، ستتاح لكم الفرصة — وهي اختيارية بالكامل — للدخول في سحب على جائزة من خلال تقديم بيانات التواصل الخاصة بكم. هذه الخطوة منفصلة تمامًا عن الاستبيان نفسه. أي بيانات تواصل تقدمونها لغرض السحب تُحفظ في نظام منفصل لا علاقة له بإجاباتكم، مما يجعل الربط بينهما غير ممكن. تُحذف بيانات التواصل هذه خلال ٣٠ يومًا من إغلاق السحب.
+                        تُجمع الإجابات بشكل مجهول الهوية. عند إكمال الاستبيان، يمكنكم اختياريًا الدخول في سحب على جائزة بتقديم بيانات تواصل. هذه البيانات تُحفظ في نظام منفصل تمامًا عن إجاباتكم ولا يمكن الربط بينهما، وتُحذف خلال ٣٠ يومًا من إغلاق السحب.
                     </p>
 
-                    <!-- WITHDRAWAL PLACEHOLDER -->
                     <!-- [WITHDRAWAL PLACEHOLDER — Replace with the appropriate text once the decision between Option 1 (full anonymisation from submission, no withdrawal possible) and Option 2 (reference code, withdrawal possible until May 1, 2026) has been made.
 
                     Option 1: نظرًا لأن الإجابات تُجمع دون أي معلومات تعريفية مرفقة، فإنه لا يمكن تحديد موقع الإجابات الفردية أو إزالتها بعد الإرسال. يُعد إخفاء الهوية دائمًا من لحظة الإرسال.
 
                     Option 2: سيظهر لكم رمز مرجعي في نهاية الاستبيان. إذا احتفظتم بهذا الرمز، يمكنكم طلب حذف بياناتكم عن طريق التواصل مع الباحث حتى تاريخ ١ مايو ٢٠٢٦. بعد هذا التاريخ، ستُحذف جميع الرموز وتصبح بياناتكم مجهولة الهوية بشكل دائم. ] -->
 
-                    <!-- Data retention and sharing -->
                     <p class="pis-heading">حفظ البيانات ومشاركتها</p>
                     <p class="pis-text">
-                        لأغراض التحليل، سيتم نقل البيانات من خوادم Qualtrics إلى خوادم جامعة أكسفورد. بعد إخفاء الهوية بشكل دائم (في موعد لا يسبق ١ مايو ٢٠٢٦)، سيتم إيداع البيانات مجهولة الهوية في مستودع بيانات بحثي متاح للمراجعين الأكاديميين والباحثين. تُحفظ البيانات لمدة لا تقل عن ثلاث سنوات بعد نشر البحث.
+                        لأغراض التحليل، تُنقل البيانات من خوادم Qualtrics إلى خوادم جامعة أكسفورد. بعد إخفاء الهوية بشكل دائم (في موعد لا يسبق ١ مايو ٢٠٢٦)، تُودع البيانات في مستودع بحثي متاح للمراجعين الأكاديميين، وتُحفظ لمدة لا تقل عن ثلاث سنوات بعد النشر.
                     </p>
 
-                    <!-- Will I receive compensation? -->
                     <p class="pis-heading">هل سأحصل على تعويض؟</p>
                     <p class="pis-text">
-                        عند إكمال الاستبيان، ستتاح لكم فرصة الدخول في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا سعوديًا. الدخول في السحب اختياري بالكامل ومنفصل عن مشاركتكم في الاستبيان.
+                        يمكنكم الدخول في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا سعوديًا. السحب اختياري ومنفصل عن المشاركة في الاستبيان.
                     </p>
 
-                    <!-- Who reviewed this research? -->
                     <p class="pis-heading">من راجع هذا البحث؟</p>
                     <p class="pis-text">
-                        حصل هذا البحث على الموافقة الأخلاقية من لجنة أخلاقيات البحث في قسم السياسة والعلاقات الدولية بجامعة أكسفورد (PIR DREC)، بالرقم المرجعي 1387726. كما يندرج هذا البحث ضمن الإعفاءات الممنوحة من الهيئة العامة للإحصاء (GASTAT) في المملكة العربية السعودية بموجب سياستها العامة لتنفيذ المسوح الإحصائية.
+                        حصل هذا البحث على الموافقة الأخلاقية من لجنة أخلاقيات البحث في قسم السياسة والعلاقات الدولية بجامعة أكسفورد (PIR DREC)، الرقم المرجعي 1387726. كما يندرج ضمن الإعفاءات الممنوحة من الهيئة العامة للإحصاء (GASTAT) بموجب سياستها العامة لتنفيذ المسوح الإحصائية.
                     </p>
 
-                    <!-- Contact -->
                     <p class="pis-heading">للتواصل أو الاستفسار</p>
                     <p class="pis-text">
-                        للتواصل مع الباحث:
+                        الباحث:
                         <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a>
                         —
                         <a href="mailto:azim.wazeer@politics.ox.ac.uk">azim.wazeer@politics.ox.ac.uk</a>
                     </p>
                     <p class="pis-text">
-                        للاستفسار عن حقوقكم كمشاركين في البحث أو لتقديم شكوى:
-                        نيل كيتشلي، رئيس لجنة أخلاقيات البحث — قسم السياسة والعلاقات الدولية
+                        لجنة أخلاقيات البحث:
+                        نيل كيتشلي
                         —
                         <a href="mailto:neil.ketchley@politics.ox.ac.uk">neil.ketchley@politics.ox.ac.uk</a>
                     </p>
 
-                    <!-- Data protection -->
                     <p class="pis-heading">حماية البيانات</p>
                     <p class="pis-text">
-                        جامعة أكسفورد هي المتحكم في البيانات. لن تُستخدم بياناتكم الشخصية إلا لأغراض البحث العلمي. لمزيد من المعلومات حول حقوقكم:
-                        <a href="https://compliance.admin.ox.ac.uk/individual-rights" target="_blank" rel="noopener">https://compliance.admin.ox.ac.uk/individual-rights</a>
+                        جامعة أكسفورد هي المتحكم في البيانات. لن تُستخدم بياناتكم الشخصية إلا لأغراض البحث العلمي.
+                        <a href="https://compliance.admin.ox.ac.uk/individual-rights" target="_blank" rel="noopener">مزيد من المعلومات حول حقوقكم</a>
                     </p>
 
                 </div>
             </div>
         </div>
-        <!-- end accordion -->
 
     </main>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
     <footer class="page-footer">
         <p>جامعة أكسفورد — قسم السياسة والعلاقات الدولية</p>
     </footer>
 
 </div>
-<!-- end page-wrapper -->
 
-<!-- =============================================
-     SCRIPTS
-     ============================================= -->
 <script>
-    // --- Accordion toggle ---
     (function () {
         var trigger = document.getElementById('pis-trigger');
         var panel = document.getElementById('pis-panel');
-
         trigger.addEventListener('click', function () {
             var expanded = trigger.getAttribute('aria-expanded') === 'true';
             trigger.setAttribute('aria-expanded', String(!expanded));
@@ -587,20 +434,14 @@
         });
     })();
 
-    // --- UTM passthrough: read utm_source from this page's URL and append to the Qualtrics link ---
     (function () {
         var ctaLink = document.getElementById('survey-cta');
-        // Base Qualtrics survey URL — replace placeholder before deployment
         var baseUrl = '[QUALTRICS_SURVEY_URL]';
-
-        // Parse utm_source from the current page URL
         var params = new URLSearchParams(window.location.search);
         var utmSource = params.get('utm_source');
-
-        // Construct the redirect URL
         if (utmSource) {
-            var separator = baseUrl.indexOf('?') !== -1 ? '&' : '?';
-            ctaLink.href = baseUrl + separator + 'utm_source=' + encodeURIComponent(utmSource);
+            var sep = baseUrl.indexOf('?') !== -1 ? '&' : '?';
+            ctaLink.href = baseUrl + sep + 'utm_source=' + encodeURIComponent(utmSource);
         } else {
             ctaLink.href = baseUrl;
         }
