@@ -194,31 +194,32 @@
             .cta-button { display: block; width: 100%; padding: 16px 24px; }
         }
 
-        /* --- Accordion --- */
+        /* --- Accordion (native <details>/<summary>) --- */
         .accordion {
             margin: 0 0 12px;
             border: 1px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
         }
-        .accordion-trigger {
+        .accordion summary {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
-            background: var(--bg-subtle);
-            border: none;
             padding: 15px 22px;
+            background: var(--bg-subtle);
             font-family: 'Noto Naskh Arabic', 'Noto Sans', Tahoma, Arial, sans-serif;
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-heading);
             cursor: pointer;
-            text-align: right;
+            list-style: none;
             direction: rtl;
+            text-align: right;
             transition: background-color 0.15s ease;
         }
-        .accordion-trigger:hover { background: #F0F0F0; }
+        .accordion summary::-webkit-details-marker { display: none; }
+        .accordion summary::marker { display: none; content: ''; }
+        .accordion summary:hover { background: #F0F0F0; }
         .accordion-icon {
             display: inline-flex;
             align-items: center;
@@ -234,19 +235,13 @@
             margin-right: auto;
             margin-left: 0;
         }
-        .accordion-trigger:hover .accordion-icon { border-color: var(--accent); color: var(--accent); }
-        .accordion-trigger[aria-expanded="true"] .accordion-icon {
+        .accordion summary:hover .accordion-icon { border-color: var(--accent); color: var(--accent); }
+        .accordion[open] .accordion-icon {
             transform: rotate(180deg);
             background: var(--accent-light);
             border-color: var(--accent);
             color: var(--accent);
         }
-        .accordion-panel {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-        .accordion-panel[aria-hidden="false"] { max-height: 4000px; }
         .accordion-content {
             padding: 22px 24px 30px;
             border-top: 1px solid var(--border-light);
@@ -335,19 +330,11 @@
             </a>
         </div>
 
-        <div class="accordion">
-            <button class="accordion-trigger"
-                    id="pis-trigger"
-                    aria-expanded="false"
-                    aria-controls="pis-panel">
+        <details class="accordion" id="pis-accordion">
+            <summary id="pis-trigger">
                 <span>صحيفة معلومات المشارك</span>
                 <span class="accordion-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="accordion-panel"
-                 id="pis-panel"
-                 role="region"
-                 aria-labelledby="pis-trigger"
-                 aria-hidden="true">
+            </summary>
                 <div class="accordion-content">
 
                     <p class="pis-heading">لماذا هذا البحث؟</p>
@@ -396,13 +383,13 @@
                         الباحث:
                         <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a>
                         —
-                        <a href="/cdn-cgi/l/email-protection#bddcc7d4d093cadcc7d8d8cffdcdd2d1d4c9d4dece93d2c593dcde93c8d6"><span class="__cf_email__" data-cfemail="ea8b908387c49d8b908f8f98aa9a8586839e838999c48592c48b89c49f81">[email&#160;protected]</span></a>
+                        <a href="mailto:azim.wazeer@politics.ox.ac.uk">azim.wazeer@politics.ox.ac.uk</a>
                     </p>
                     <p class="pis-text">
                         لجنة أخلاقيات البحث:
                         نيل كيتشلي
                         —
-                        <a href="/cdn-cgi/l/email-protection#3d53585451135658495e555158447d4d52515449545e4e135245135c5e134856"><span class="__cf_email__" data-cfemail="9bf5fef2f7b5f0feeff8f3f7fee2dbebf4f7f2eff2f8e8b5f4e3b5faf8b5eef0">[email&#160;protected]</span></a>
+                        <a href="mailto:neil.ketchley@politics.ox.ac.uk">neil.ketchley@politics.ox.ac.uk</a>
                     </p>
 
                     <p class="pis-heading">حماية البيانات</p>
@@ -412,8 +399,7 @@
                     </p>
 
                 </div>
-            </div>
-        </div>
+        </details>
 
     </main>
 
@@ -423,17 +409,20 @@
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    (function () {
-        var trigger = document.getElementById('pis-trigger');
-        var panel = document.getElementById('pis-panel');
-        trigger.addEventListener('click', function () {
-            var expanded = trigger.getAttribute('aria-expanded') === 'true';
-            trigger.setAttribute('aria-expanded', String(!expanded));
-            panel.setAttribute('aria-hidden', String(expanded));
-        });
-    })();
-
+<script>
     (function () {
         var ctaLink = document.getElementById('survey-cta');
-        var baseUrl
+        var baseUrl = '[QUALTRICS_SURVEY_URL]';
+        var params = new URLSearchParams(window.location.search);
+        var utmSource = params.get('utm_source');
+        if (utmSource) {
+            var sep = baseUrl.indexOf('?') !== -1 ? '&' : '?';
+            ctaLink.href = baseUrl + sep + 'utm_source=' + encodeURIComponent(utmSource);
+        } else {
+            ctaLink.href = baseUrl;
+        }
+    })();
+</script>
+
+</body>
+</html>
