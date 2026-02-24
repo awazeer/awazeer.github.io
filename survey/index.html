@@ -325,7 +325,7 @@
         <div class="prize-block">
             <span class="prize-label">السحب على الجائزة</span>
             <p class="prize-text">
-                عند إكمال الاستبيان، يمكنكم الدخول في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا سعوديًا. السحب اختياري بالكامل، وبيانات التواصل تُحفظ بشكل منفصل تمامًا عن إجاباتكم.
+                عند إكمال الاستبيان، يمكنكم الدخول في سحب على واحدة من ثلاث بطاقات هدايا، قيمة كل منها ٢٥٠ ريالًا سعوديًا. السحب اختياري بالكامل، وسيتم حفظ بيانات التواصل بشكل منفصل تمامًا عن إجاباتكم.
             </p>
         </div>
 
@@ -367,7 +367,7 @@
 
                     <p class="pis-heading">ماذا عن الخصوصية؟</p>
                     <p class="pis-text">
-                        تُجمع الإجابات بشكل مجهول الهوية. عند إكمال الاستبيان، يمكنكم اختياريًا الدخول في سحب على جائزة بتقديم بيانات تواصل. هذه البيانات تُحفظ في نظام منفصل تمامًا عن إجاباتكم ولا يمكن الربط بينهما، وتُحذف خلال ٣٠ يومًا من إغلاق السحب.
+                        تُجمع الإجابات بشكل مجهول الهوية. عند إكمال الاستبيان، يمكنكم اختياريًا الدخول في سحب على جائزة بتقديم بيانات تواصل. سيتم حفظ هذه البيانات بشكل منفصل تمامًا عن إجاباتكم ولا يمكن الربط بينهما، وتُحذف خلال ٣٠ يومًا من إغلاق السحب.
                     </p>
 
                     <!-- [WITHDRAWAL PLACEHOLDER — Replace with the appropriate text once the decision between Option 1 (full anonymisation from submission, no withdrawal possible) and Option 2 (reference code, withdrawal possible until May 1, 2026) has been made.
@@ -383,7 +383,7 @@
 
                     <p class="pis-heading">هل سأحصل على تعويض؟</p>
                     <p class="pis-text">
-                        يمكنكم الدخول في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا سعوديًا. السحب اختياري ومنفصل عن المشاركة في الاستبيان.
+                        يمكنكم الدخول في سحب على واحدة من ثلاث بطاقات هدايا، قيمة كل منها ٢٥٠ ريالًا سعوديًا. السحب اختياري ومنفصل عن المشاركة في الاستبيان.
                     </p>
 
                     <p class="pis-heading">من راجع هذا البحث؟</p>
@@ -396,13 +396,13 @@
                         الباحث:
                         <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a>
                         —
-                        <a href="mailto:azim.wazeer@politics.ox.ac.uk">azim.wazeer@politics.ox.ac.uk</a>
+                        <a href="/cdn-cgi/l/email-protection#bddcc7d4d093cadcc7d8d8cffdcdd2d1d4c9d4dece93d2c593dcde93c8d6"><span class="__cf_email__" data-cfemail="ea8b908387c49d8b908f8f98aa9a8586839e838999c48592c48b89c49f81">[email&#160;protected]</span></a>
                     </p>
                     <p class="pis-text">
                         لجنة أخلاقيات البحث:
                         نيل كيتشلي
                         —
-                        <a href="mailto:neil.ketchley@politics.ox.ac.uk">neil.ketchley@politics.ox.ac.uk</a>
+                        <a href="/cdn-cgi/l/email-protection#3d53585451135658495e555158447d4d52515449545e4e135245135c5e134856"><span class="__cf_email__" data-cfemail="9bf5fef2f7b5f0feeff8f3f7fee2dbebf4f7f2eff2f8e8b5f4e3b5faf8b5eef0">[email&#160;protected]</span></a>
                     </p>
 
                     <p class="pis-heading">حماية البيانات</p>
@@ -423,7 +423,7 @@
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     (function () {
         var trigger = document.getElementById('pis-trigger');
         var panel = document.getElementById('pis-panel');
@@ -436,17 +436,4 @@
 
     (function () {
         var ctaLink = document.getElementById('survey-cta');
-        var baseUrl = '[QUALTRICS_SURVEY_URL]';
-        var params = new URLSearchParams(window.location.search);
-        var utmSource = params.get('utm_source');
-        if (utmSource) {
-            var sep = baseUrl.indexOf('?') !== -1 ? '&' : '?';
-            ctaLink.href = baseUrl + sep + 'utm_source=' + encodeURIComponent(utmSource);
-        } else {
-            ctaLink.href = baseUrl;
-        }
-    })();
-</script>
-
-</body>
-</html>
+        var baseUrl
