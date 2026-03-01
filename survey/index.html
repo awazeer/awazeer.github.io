@@ -227,11 +227,7 @@
                 <p class="pis-heading">ماذا عن الخصوصية؟</p>
                 <p class="pis-text">تُجمع الإجابات بشكل مجهول الهوية. عند إكمال الاستبيان، يمكنكم اختياريًا الدخول في سحب على جائزة بتقديم بيانات تواصل. سيتم حفظ هذه البيانات بشكل منفصل تمامًا عن إجاباتكم ولا يمكن الربط بينهما، وتُحذف خلال ٣٠ يومًا من إغلاق السحب.</p>
 
-                <!-- [WITHDRAWAL PLACEHOLDER — Replace with the appropriate text once the decision between Option 1 (full anonymisation from submission, no withdrawal possible) and Option 2 (reference code, withdrawal possible until May 1, 2026) has been made.
-
-                Option 1: نظرًا لأن الإجابات تُجمع دون أي معلومات تعريفية مرفقة، فإنه لا يمكن تحديد موقع الإجابات الفردية أو إزالتها بعد الإرسال. يُعد إخفاء الهوية دائمًا من لحظة الإرسال.
-
-                Option 2: سيظهر لكم رمز مرجعي في نهاية الاستبيان. إذا احتفظتم بهذا الرمز، يمكنكم طلب حذف بياناتكم عن طريق التواصل مع الباحث حتى تاريخ ١ مايو ٢٠٢٦. بعد هذا التاريخ، ستُحذف جميع الرموز وتصبح بياناتكم مجهولة الهوية بشكل دائم. ] -->
+                <p class="pis-text">سيظهر لكم رمز مرجعي في نهاية الاستبيان. إذا احتفظتم بهذا الرمز، يمكنكم طلب حذف بياناتكم عن طريق التواصل مع الباحث حتى تاريخ ١ مايو ٢٠٢٦. بعد هذا التاريخ، ستُحذف جميع الرموز وتصبح بياناتكم مجهولة الهوية بشكل دائم.</p>
 
                 <p class="pis-heading">حفظ البيانات ومشاركتها</p>
                 <p class="pis-text">لأغراض التحليل، تُنقل البيانات من خوادم Qualtrics إلى خوادم جامعة أكسفورد. بعد إخفاء الهوية بشكل دائم (في موعد لا يسبق ١ مايو ٢٠٢٦)، تُودع البيانات في مستودع بحثي متاح للمراجعين الأكاديميين، وتُحفظ لمدة لا تقل عن ثلاث سنوات بعد النشر.</p>
@@ -243,8 +239,8 @@
                 <p class="pis-text">حصل هذا البحث على الموافقة الأخلاقية من لجنة أخلاقيات البحث في قسم السياسة والعلاقات الدولية بجامعة أكسفورد (DPIR - CUREC)، الرقم المرجعي 1387726. كما يندرج ضمن الإعفاءات الممنوحة من الهيئة العامة للإحصاء (GASTAT) بموجب سياستها العامة لتنفيذ المسوح الإحصائية.</p>
 
                 <p class="pis-heading">للتواصل أو الاستفسار</p>
-                <p class="pis-text">الباحث: <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a> — <a href="mailto:azim.wazeer@politics.ox.ac.uk">azim.wazeer@politics.ox.ac.uk</a></p>
-                <p class="pis-text">لجنة أخلاقيات البحث: روبن هاردنغ — <a href="mailto:robin.harding@politics.ox.ac.uk">robin.harding@politics.ox.ac.uk</a></p>
+                <p class="pis-text">الباحث: <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a> — <a href="/cdn-cgi/l/email-protection#4d2c372420633a2c3728283f0d3d22212439242e3e632235632c2e633826"><span class="__cf_email__" data-cfemail="afced5c6c281d8ced5cacaddefdfc0c3c6dbc6ccdc81c0d781cecc81dac4">[email&#160;protected]</span></a></p>
+                <p class="pis-text">لجنة أخلاقيات البحث: روبن هاردنغ — <a href="/cdn-cgi/l/email-protection#681a070a01064600091a0c01060f28180704011c010b1b46071046090b461d03"><span class="__cf_email__" data-cfemail="f78598959e99d99f9685939e9990b787989b9e839e9484d9988fd99694d9829c">[email&#160;protected]</span></a></p>
 
                 <p class="pis-heading">حماية البيانات</p>
                 <p class="pis-text">جامعة أكسفورد هي المتحكم في البيانات. لن تُستخدم بياناتكم الشخصية إلا لأغراض البحث العلمي. <a href="https://compliance.admin.ox.ac.uk/individual-rights" target="_blank" rel="noopener">مزيد من المعلومات حول حقوقكم</a></p>
@@ -280,22 +276,7 @@
     Qualtrics setup: Add an Embedded Data element named "utm_source"
     at the top of the Survey Flow (before any blocks).
 -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     (function () {
         var ctaLink = document.getElementById('survey-cta');
-        var baseUrl = '[QUALTRICS_SURVEY_URL]';
-        var params = new URLSearchParams(window.location.search);
-        var utmSource = params.get('utm_source');
-        if (utmSource) {
-            var sep = baseUrl.indexOf('?') !== -1 ? '&' : '?';
-            ctaLink.href = baseUrl + sep + 'utm_source=' + encodeURIComponent(utmSource);
-        } else {
-            ctaLink.href = baseUrl;
-        }
-    })();
-</script>
-
-</body>
-</html>
-</body>
-</html>
+        var baseUrl
