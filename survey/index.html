@@ -70,7 +70,6 @@
 
         .greeting { font-size: 1.05rem; color: var(--text-heading); margin-bottom: 10px; font-weight: 600; }
         .body-text { font-size: 1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 16px; }
-        .body-text strong { color: var(--text-heading); font-weight: 600; }
 
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
@@ -79,7 +78,6 @@
             font-size: 0.84rem; line-height: 1.65; color: var(--text-muted);
             margin: 6px 0 22px; padding-right: 12px; border-right: 2px solid var(--border);
         }
-        .signpost a { color: var(--accent); font-weight: 600; }
 
         .details-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 0 0 22px; }
         .detail-chip {
@@ -114,42 +112,6 @@
         .cta-button:active { background-color: #154D72; }
         @media (max-width: 480px) { .cta-button { display: block; width: 100%; padding: 16px 24px; } }
 
-        .accordion {
-            margin: 0 0 12px; border: 1px solid var(--border);
-            border-radius: 8px; overflow: hidden;
-        }
-        .accordion summary {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 15px 22px; background: var(--bg-subtle);
-            font-family: 'Noto Naskh Arabic', 'Noto Sans', Tahoma, Arial, sans-serif;
-            font-size: 0.9rem; font-weight: 600; color: var(--text-heading);
-            cursor: pointer; list-style: none; direction: rtl; text-align: right;
-            transition: background-color 0.15s ease;
-        }
-        .accordion summary::-webkit-details-marker { display: none; }
-        .accordion summary::marker { display: none; content: ''; }
-        .accordion summary:hover { background: #F0F0F0; }
-        .accordion-icon {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 24px; height: 24px; border-radius: 50%;
-            background: var(--white); border: 1px solid var(--border);
-            color: var(--text-muted); font-size: 0.65rem;
-            transition: transform 0.3s ease, border-color 0.2s ease;
-            flex-shrink: 0; margin-right: auto; margin-left: 0;
-        }
-        .accordion summary:hover .accordion-icon { border-color: var(--accent); color: var(--accent); }
-        .accordion[open] .accordion-icon {
-            transform: rotate(180deg); background: var(--accent-light);
-            border-color: var(--accent); color: var(--accent);
-        }
-        .accordion-content { padding: 22px 24px 30px; border-top: 1px solid var(--border-light); }
-
-        .pis-heading { font-size: 0.93rem; font-weight: 700; color: var(--text-heading); margin-top: 22px; margin-bottom: 6px; }
-        .pis-heading:first-child { margin-top: 0; }
-        .pis-text { font-size: 0.88rem; line-height: 1.75; color: var(--text-body); margin-bottom: 14px; }
-        .pis-text:last-child { margin-bottom: 0; }
-        .pis-text a { color: var(--accent); word-break: break-all; }
-
         .page-footer {
             margin-top: 52px; padding-top: 18px;
             border-top: 1px solid var(--border-light);
@@ -165,9 +127,11 @@
 
     <header class="affiliation">
         <p class="affiliation-line">
-            دراسة بحثية تستضيفها
-            <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">جامعة أكسفورد</a>
-            — قسم السياسة والعلاقات الدولية
+            دراسة بحثية يجريها
+            <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a>
+            — باحث دكتوراه، قسم السياسة والعلاقات الدولية، جامعة أكسفورد
+            &nbsp;·&nbsp;
+            <a href="mailto:azim.wazeer@politics.ox.ac.uk">azim.wazeer@politics.ox.ac.uk</a>
         </p>
     </header>
 
@@ -176,17 +140,15 @@
     <main>
         <p class="greeting">السلام عليكم،</p>
         <p class="body-text">
-            ندعوكم للمشاركة في دراسة بحثية يُجريها
+            ندعوك للمشاركة في دراسة بحثية يُجريها
             <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a>،
-            باحث في جامعة أكسفورد، حول الاستثمارات السعودية والتنمية الاقتصادية.
+            باحث دكتوراه في جامعة أكسفورد، حول الاستثمارات السعودية والتنمية الاقتصادية —
+            بحث أكاديمي مستقل لا يمثّل أي جهة حكومية أو شركة.
         </p>
 
         <p class="signpost">
-            يمكنكم الاطلاع على
-            <a href="#pis-trigger">«وثيقة معلومات المشارك»</a>
-            أدناه قبل البدء. للمشاركة مباشرة، اضغطوا على زر
-            <a href="#survey-cta">«ابدأ الاستبيان»</a>
-            أسفل الصفحة.
+            المشاركة اختيارية بالكامل — يمكنك الانسحاب في أي وقت دون أي تبعات.
+            حصل هذا البحث على الموافقة الأخلاقية من جامعة أكسفورد؛ التفاصيل الكاملة متاحة داخل الاستبيان.
         </p>
 
         <div class="details-row">
@@ -196,62 +158,27 @@
             </span>
             <span class="detail-chip">
                 <span class="chip-icon">◈</span>
-                مشاركة اختيارية ومجهولة الهوية
+                مشاركة مجهولة الهوية
+            </span>
+            <span class="detail-chip">
+                <span class="chip-icon">◇</span>
+                للمواطنين السعوديين، ١٨ سنة فأكثر
             </span>
         </div>
 
         <div class="prize-block">
-            <span class="prize-label">السحب على الجائزة</span>
+            <span class="prize-label">الخصوصية والسحب على الجائزة</span>
             <p class="prize-text">
-                عند إكمال الاستبيان، يمكنكم الدخول في سحب على واحدة من ثلاث بطاقات هدايا، قيمة كل منها ٢٥٠ ريالًا سعوديًا. السحب اختياري بالكامل، وسيتم حفظ بيانات التواصل بشكل منفصل تمامًا عن إجاباتكم.
+                إجاباتك مجهولة الهوية بشكل دائم؛ لا تُجمع أي بيانات شخصية أثناء الاستبيان، ولا يُسجَّل عنوان IP.
+                البيانات تُحفظ على خوادم Qualtrics الأوروبية، ثم تُنقل إلى خوادم جامعة أكسفورد في المملكة المتحدة للتحليل.
+                عند الإكمال، يمكنك الدخول اختياريًا في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا عبر نموذج منفصل؛
+                بيانات التواصل تُحفظ بشكل مستقل تمامًا ولا يمكن ربطها بإجاباتك بأي شكل.
             </p>
         </div>
 
-        <!-- PARTICIPANT INFORMATION SHEET — now above the CTA -->
-        <details class="accordion" id="pis-accordion">
-            <summary id="pis-trigger">
-                <span>وثيقة معلومات المشارك</span>
-                <span class="accordion-icon" aria-hidden="true">▼</span>
-            </summary>
-            <div class="accordion-content">
-
-                <p class="pis-heading">لماذا هذا البحث؟</p>
-                <p class="pis-text">تهدف هذه الدراسة إلى فهم آراء المواطنين السعوديين حول الاستثمارات السعودية والتنمية الاقتصادية.</p>
-
-                <p class="pis-heading">ماذا سيُطلب مني؟</p>
-                <p class="pis-text">إكمال استبيان إلكتروني يستغرق حوالي ٧ إلى ٩ دقائق، يتضمن قراءة نص قصير ومشاهدة صورة، ثم الإجابة على أسئلة حول آرائكم.</p>
-
-                <p class="pis-heading">هل المشاركة إلزامية؟</p>
-                <p class="pis-text">المشاركة اختيارية بالكامل. يمكنكم الانسحاب في أي وقت دون إبداء أي سبب.</p>
-
-                <p class="pis-heading">ماذا عن الخصوصية؟</p>
-                <p class="pis-text">تُجمع الإجابات بشكل مجهول الهوية. عند إكمال الاستبيان، يمكنكم اختياريًا الدخول في سحب على جائزة بتقديم بيانات تواصل. سيتم حفظ هذه البيانات بشكل منفصل تمامًا عن إجاباتكم ولا يمكن الربط بينهما، وتُحذف خلال ٣٠ يومًا من إغلاق السحب.</p>
-
-                <p class="pis-text">سيظهر لكم رمز مرجعي في نهاية الاستبيان. إذا احتفظتم بهذا الرمز، يمكنكم طلب حذف بياناتكم عن طريق التواصل مع الباحث حتى تاريخ ١ مايو ٢٠٢٦. بعد هذا التاريخ، ستُحذف جميع الرموز وتصبح بياناتكم مجهولة الهوية بشكل دائم.</p>
-
-                <p class="pis-heading">حفظ البيانات ومشاركتها</p>
-                <p class="pis-text">لأغراض التحليل، تُنقل البيانات من خوادم Qualtrics إلى خوادم جامعة أكسفورد. بعد إخفاء الهوية بشكل دائم (في موعد لا يسبق ١ مايو ٢٠٢٦)، تُودع البيانات في مستودع بحثي متاح للمراجعين الأكاديميين، وتُحفظ لمدة لا تقل عن ثلاث سنوات بعد النشر.</p>
-
-                <p class="pis-heading">هل سأحصل على تعويض؟</p>
-                <p class="pis-text">يمكنكم الدخول في سحب على واحدة من ثلاث بطاقات هدايا، قيمة كل منها ٢٥٠ ريالًا سعوديًا. السحب اختياري ومنفصل عن المشاركة في الاستبيان.</p>
-
-                <p class="pis-heading">من راجع هذا البحث؟</p>
-                <p class="pis-text">حصل هذا البحث على الموافقة الأخلاقية من لجنة أخلاقيات البحث في قسم السياسة والعلاقات الدولية بجامعة أكسفورد (DPIR - CUREC)، الرقم المرجعي 1387726. كما يندرج ضمن الإعفاءات الممنوحة من الهيئة العامة للإحصاء (GASTAT) بموجب سياستها العامة لتنفيذ المسوح الإحصائية.</p>
-
-                <p class="pis-heading">للتواصل أو الاستفسار</p>
-                <p class="pis-text">الباحث: <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a> — <a href="/cdn-cgi/l/email-protection#4d2c372420633a2c3728283f0d3d22212439242e3e632235632c2e633826"><span class="__cf_email__" data-cfemail="afced5c6c281d8ced5cacaddefdfc0c3c6dbc6ccdc81c0d781cecc81dac4">[email&#160;protected]</span></a></p>
-                <p class="pis-text">لجنة أخلاقيات البحث: روبن هاردنغ — <a href="/cdn-cgi/l/email-protection#681a070a01064600091a0c01060f28180704011c010b1b46071046090b461d03"><span class="__cf_email__" data-cfemail="f78598959e99d99f9685939e9990b787989b9e839e9484d9988fd99694d9829c">[email&#160;protected]</span></a></p>
-
-                <p class="pis-heading">حماية البيانات</p>
-                <p class="pis-text">جامعة أكسفورد هي المتحكم في البيانات. لن تُستخدم بياناتكم الشخصية إلا لأغراض البحث العلمي. <a href="https://compliance.admin.ox.ac.uk/individual-rights" target="_blank" rel="noopener">مزيد من المعلومات حول حقوقكم</a></p>
-
-            </div>
-        </details>
-
-        <!-- CTA — now below the PIS -->
         <div class="cta-section">
             <a id="survey-cta" class="cta-button" href="[QUALTRICS_SURVEY_URL]" role="button">
-                ابدأ الاستبيان
+                انتقل إلى الاستبيان
             </a>
         </div>
 
@@ -276,7 +203,19 @@
     Qualtrics setup: Add an Embedded Data element named "utm_source"
     at the top of the Survey Flow (before any blocks).
 -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     (function () {
+        var params = new URLSearchParams(window.location.search);
+        var utmSource = params.get('utm_source');
         var ctaLink = document.getElementById('survey-cta');
-        var baseUrl
+        var baseUrl = ctaLink.getAttribute('href');
+
+        if (utmSource && baseUrl && baseUrl !== '[QUALTRICS_SURVEY_URL]') {
+            var separator = baseUrl.indexOf('?') !== -1 ? '&' : '?';
+            ctaLink.setAttribute('href', baseUrl + separator + 'utm_source=' + encodeURIComponent(utmSource));
+        }
+    })();
+</script>
+
+</body>
+</html>
