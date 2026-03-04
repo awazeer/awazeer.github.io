@@ -46,40 +46,43 @@
             padding: 44px 28px 72px;
             animation: fadeUp 0.45s ease-out both;
         }
-        @media (max-width: 480px) { .page-wrapper { padding: 28px 20px 56px; } }
 
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(12px); }
             to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* ── Affiliation ── */
         .affiliation {
-            margin-bottom: 36px;
-            padding-bottom: 18px;
+            margin-bottom: 28px;
+            padding-bottom: 14px;
             border-bottom: 1px solid var(--border-light);
         }
         .affiliation-line { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
         .affiliation-line a { color: var(--accent); text-decoration: none; font-weight: 600; }
         .affiliation-line a:hover { text-decoration: underline; }
 
+        /* ── Title ── */
         .study-title {
             font-size: 1.45rem; font-weight: 700; color: var(--text-heading);
-            line-height: 1.55; margin-bottom: 24px;
+            line-height: 1.55; margin-bottom: 20px;
         }
-        @media (max-width: 480px) { .study-title { font-size: 1.25rem; } }
 
-        .greeting { font-size: 1.05rem; color: var(--text-heading); margin-bottom: 10px; font-weight: 600; }
-        .body-text { font-size: 1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 16px; }
+        /* ── Body text ── */
+        .greeting { font-size: 1.05rem; color: var(--text-heading); margin-bottom: 8px; font-weight: 600; }
+        .body-text { font-size: 1rem; line-height: 1.8; color: var(--text-body); margin-bottom: 14px; }
 
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* ── Signpost ── */
         .signpost {
             font-size: 0.84rem; line-height: 1.65; color: var(--text-muted);
-            margin: 6px 0 22px; padding-right: 12px; border-right: 2px solid var(--border);
+            margin: 4px 0 18px; padding-right: 12px; border-right: 2px solid var(--border);
         }
 
-        .details-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 0 0 22px; }
+        /* ── Chips ── */
+        .details-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 18px; }
         .detail-chip {
             display: inline-flex; align-items: center; gap: 6px;
             background: var(--bg-subtle); border: 1px solid var(--border-light);
@@ -88,14 +91,16 @@
         }
         .detail-chip .chip-icon { font-size: 0.9rem; opacity: 0.55; }
 
+        /* ── Prize / privacy block ── */
         .prize-block {
             background-color: var(--accent-light); border: 1px solid #D4E5F3;
-            border-radius: 8px; padding: 16px 20px; margin: 0 0 24px;
+            border-radius: 8px; padding: 14px 18px; margin: 0 0 24px;
         }
         .prize-label { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
         .prize-text { font-size: 0.91rem; line-height: 1.7; color: var(--text-body); margin: 0; }
 
-        .cta-section { text-align: center; margin: 32px 0 0; }
+        /* ── CTA ── */
+        .cta-section { text-align: center; margin: 24px 0 0; }
         .cta-button {
             display: inline-block; background-color: var(--accent); color: var(--white);
             font-family: 'Noto Naskh Arabic', 'Noto Sans', Tahoma, Arial, sans-serif;
@@ -110,12 +115,77 @@
             color: var(--white); box-shadow: 0 2px 8px rgba(38, 124, 185, 0.25);
         }
         .cta-button:active { background-color: #154D72; }
-        @media (max-width: 480px) { .cta-button { display: block; width: 100%; padding: 16px 24px; } }
 
+        /* ── Footer ── */
         .page-footer {
-            margin-top: 52px; padding-top: 18px;
+            margin-top: 44px; padding-top: 16px;
             border-top: 1px solid var(--border-light);
             font-size: 0.78rem; color: var(--text-muted); text-align: center;
+        }
+
+        /* ════════════════════════════
+           MOBILE OVERRIDES
+           Target: phones up to ~480px
+           Pixel 6 XL viewport: 412px
+        ════════════════════════════ */
+        @media (max-width: 480px) {
+
+            .page-wrapper {
+                padding: 18px 18px 48px;
+            }
+
+            .affiliation {
+                margin-bottom: 16px;
+                padding-bottom: 12px;
+            }
+            /* Collapse the email address on mobile — already on consent page */
+            .affiliation-email { display: none; }
+
+            .study-title {
+                font-size: 1.15rem;
+                margin-bottom: 14px;
+                line-height: 1.5;
+            }
+
+            .greeting { margin-bottom: 6px; }
+
+            .body-text {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+                line-height: 1.75;
+            }
+
+            .signpost {
+                font-size: 0.82rem;
+                margin: 2px 0 14px;
+                line-height: 1.6;
+            }
+
+            .details-row {
+                gap: 8px;
+                margin-bottom: 14px;
+            }
+            .detail-chip {
+                padding: 5px 12px;
+                font-size: 0.8rem;
+            }
+
+            .prize-block {
+                padding: 12px 15px;
+                margin-bottom: 18px;
+            }
+            .prize-label { font-size: 0.76rem; margin-bottom: 5px; }
+            .prize-text { font-size: 0.86rem; line-height: 1.65; }
+
+            .cta-section { margin-top: 16px; }
+            .cta-button {
+                display: block;
+                width: 100%;
+                padding: 15px 24px;
+                font-size: 1rem;
+            }
+
+            .page-footer { margin-top: 32px; }
         }
     </style>
 </head>
@@ -129,9 +199,8 @@
         <p class="affiliation-line">
             دراسة بحثية يجريها
             <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a>
-            — باحث دكتوراه، قسم السياسة والعلاقات الدولية، جامعة أكسفورد
-            &nbsp;·&nbsp;
-            <a href="mailto:azim.wazeer@politics.ox.ac.uk">azim.wazeer@politics.ox.ac.uk</a>
+            — باحث دكتوراه، قسم السياسة والعلاقات الدولية، جامعة أكسفورد<span class="affiliation-email">
+            &nbsp;·&nbsp;<a href="mailto:azim.wazeer@politics.ox.ac.uk">azim.wazeer@politics.ox.ac.uk</a></span>
         </p>
     </header>
 
@@ -140,15 +209,12 @@
     <main>
         <p class="greeting">السلام عليكم،</p>
         <p class="body-text">
-            ندعوك للمشاركة في دراسة بحثية يُجريها
-            <a href="https://www.politics.ox.ac.uk/person/azim-wazeer" target="_blank" rel="noopener">أحمد وزير</a>،
-            باحث دكتوراه في جامعة أكسفورد، حول الاستثمارات السعودية والتنمية الاقتصادية —
+            ندعوك للمشاركة في دراسة بحثية حول الاستثمارات السعودية والتنمية الاقتصادية —
             بحث أكاديمي مستقل لا يمثّل أي جهة حكومية أو شركة.
         </p>
 
         <p class="signpost">
             المشاركة اختيارية بالكامل — يمكنك الانسحاب في أي وقت دون أي تبعات.
-            حصل هذا البحث على الموافقة الأخلاقية من جامعة أكسفورد؛ التفاصيل الكاملة متاحة داخل الاستبيان.
         </p>
 
         <div class="details-row">
@@ -158,7 +224,7 @@
             </span>
             <span class="detail-chip">
                 <span class="chip-icon">◈</span>
-                مشاركة مجهولة الهوية
+                مجهول الهوية
             </span>
             <span class="detail-chip">
                 <span class="chip-icon">◇</span>
@@ -169,10 +235,9 @@
         <div class="prize-block">
             <span class="prize-label">الخصوصية والسحب على الجائزة</span>
             <p class="prize-text">
-                إجاباتك مجهولة الهوية بشكل دائم؛ لا تُجمع أي بيانات شخصية أثناء الاستبيان، ولا يُسجَّل عنوان IP.
-                البيانات تُحفظ على خوادم Qualtrics الأوروبية، ثم تُنقل إلى خوادم جامعة أكسفورد في المملكة المتحدة للتحليل.
-                عند الإكمال، يمكنك الدخول اختياريًا في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا عبر نموذج منفصل؛
-                بيانات التواصل تُحفظ بشكل مستقل تمامًا ولا يمكن ربطها بإجاباتك بأي شكل.
+                إجاباتك مجهولة الهوية بشكل دائم؛ لا تُجمع أي بيانات شخصية أثناء الاستبيان.
+                البيانات تُحفظ على خوادم Qualtrics الأوروبية ثم تُنقل إلى خوادم جامعة أكسفورد في المملكة المتحدة للتحليل.
+                عند الإكمال، يمكنك الدخول اختياريًا في سحب على إحدى ثلاث بطاقات هدايا بقيمة ٢٥٠ ريالًا عبر نموذج منفصل لا يمكن ربطه بإجاباتك.
             </p>
         </div>
 
